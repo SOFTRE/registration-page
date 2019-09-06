@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <style>
+        body{
+            background-image: url("img/girl1.jpg");
+            background-repeat: repeat;
+        }
+
+        div{
+            box-sizing: border-box;
+            border: 8px lightgray solid;
+            width: 900px;
+            height: 500px;
+
+            margin: 30px auto;
+            background-color: white;
+            padding: 15px;
+        }
+         .left{
+            width: 25%;
+             height: 100%;
+            float: left;
+             border: none;
+             margin: 0px;
+             padding: 0px;
+        }
+        .center{
+            width: 50%;
+            float: left;
+            margin: 0px;
+            border: none;
+            height: 100%;
+            padding: 0px;
+        }
+         .right{
+
+            width: 25%;
+            float: left;
+             margin: 0px;
+             border: none;
+             height: 100%;
+             padding: 0px;
+             text-decoration: none;
+        }
+        .left-1{
+            color: orange;
+            padding: 0px;
+            font-size: 18px;
+        }
+        .left-2{
+            color: gray;
+            padding: 0px;
+            font-size: 19px;
+        }
+        .right-1{
+            float: right;
+        }
+        .center-user{
+            text-align: right;
+            padding: 6px;
+        }
+        .center-user-text{
+            padding: 6px;
+            size: 10px;
+        }
+        .center-user-text-1{
+            height: 30px;
+            width: 250px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+        .center-user-text-11{
+            height: 30px;
+            width: 130px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+        .reset{
+             padding: 5px auto;
+         }
+        .img1{
+            margin-top: 10px ;
+        }
+        input[type="text"]{
+            color: firebrick;
+        }
+        input[type="password"]{
+            color: cyan;
+        }
+    </style>
+</head>
+<body class="img">
+<div>
+    <div class="left">
+        <font class="left-1">新用户注册</font>
+        <br>
+        <font class="left-2">USER REGISTER</font>
+    </div>
+    <div class="center" class="container">
+        <form onsubmit="return oncheck()" name="form" action="#" method="get" >
+        <table  class="center1"  width="100%" >
+            <tr >
+                <td class="center-user">
+                    用户名
+                </td>
+                <td class="center-user-text" colspan="2" id="1" >
+                    <input id="111" class="center-user-text-1" size="25"  type="text" name="username" value="A7824220">
+                </td>
+            </tr>
+            <tr>
+                <td class="center-user">
+                    密码
+                </td>
+                <td class="center-user-text" colspan="2" >
+                    <input id="222" class="center-user-text-1" size="25"  type="password" name="password" >
+                    <input type="button" value="*.*" id="221" onmousedown="open1()" onmouseup="close1()">
+                </td>
+            </tr>
+            <tr>
+                <td class="center-user">
+                    Email
+                </td>
+                <td class="center-user-text" colspan="2">
+                    <input id="333" class="center-user-text-1" size="25"  type="text" name="Email" >
+                </td>
+            </tr>
+            <tr>
+                <td class="center-user">
+                    姓名
+                </td>
+                <td class="center-user-text" colspan="2">
+                    <input id="444" class="center-user-text-1" size="25"  type="text" name="name" >
+                </td>
+            </tr>
+            <tr>
+                <td class="center-user">
+                    手机号
+                </td>
+                <td class="center-user-text" colspan="2">
+                    <input id="555" class="center-user-text-1" size="25"  type="text" name="phone number" >
+                </td>
+            </tr>
+            <tr><td class="center-user">
+                性别
+            </td>
+                <td colspan="2">
+                    <input type="radio" name="sex" value="male" checked>男
+                    <input type="radio" name="sex" value="female">女
+                </td>
+            </tr>
+            <tr>
+                <td class="center-user">
+                    生日
+                </td>
+                <td class="center-user-text" colspan="2">
+                    <input id="666" class="center-user-text-1" type="date" name="birthday" >
+                </td>
+            </tr>
+            <tr>
+                <td class="center-user">
+                    验证码
+                </td>
+                <td class="center-user-text">
+                    <input id="777" class="center-user-text-11" type="text" name="mark" >
+                </td>
+                <td>
+                    <img src="img/checkcode.jpg">
+                </td>
+            </tr>
+            <tr>
+                <td >
+            </td>
+                <td colspan="2">
+                     <input type="image"   class="img1" src="img/regbtn.jpg" >
+                    <input class="reset" type="reset" value="清空" name="reset">
+                </td>
+
+            </tr>
+        </table>
+        </form>
+    </div>
+
+    <div class="right">
+        <font class="right-1">已有帐号？&nbsp;<a href="Test01.html"><font color="#ff7f50">立即登录 </font></a></font>
+    </div>
+</div>
+<script type="text/javascript">
+    function oncheck() {
+        var text=document.getElementById("111").value;
+        if (text===""){
+            alert("用户名不能为空");
+            return false;
+        }else if (text.length>0&&text.length<5){
+            alert("字符长度应该在0-5之间！");
+            return false;
+        }
+        var text1=document.getElementById("222").value;
+        if (text1===""){
+            alert("密码不能为空！");
+            return false;
+        }else if (text1.length>0&&text1.length<6){
+            alert("密码不能少于6位！")
+            return false;
+        }
+        var text2=document.getElementById("555").value;
+        if (text2===""){
+            alert("手机号不能为空！");
+            return false;
+        }else if (text2.length!=11){
+            alert("请输入11位手机号！");
+            return false;
+        }
+        var text3=document.getElementById("444").value;
+        if (text3===""){
+            alert("姓名不能为空！");
+            return false;
+        }
+        var text4=document.getElementById("666").value;
+        if (text4===""){
+            alert("生日不能为空！");
+            return false;
+        }
+        var text5=document.getElementById("777").value;
+        if (text5===""){
+            alert("验证码不能为空！");
+            return false;
+        }else if (!(text5==="zckx"||text5==="ZCKX"||text5==="Zckx"
+            ||text5==="ZCkx"||text5==="ZCKx"||text5==="zckX"
+            ||text5==="ZckX"||text5==="ZCkX"||text5==="ZcKX"||text5==="zcKX")){
+            alert("验证码格式不正确！");
+            return false;
+        }
+        var text6=document.getElementById("333").value;
+        var reg = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+        if (text6===""){
+            alert("邮箱不能为空");
+            return false;
+        }else if (!reg.test(text6)){
+            alert("验证码格式不正确！");
+            return false;
+        }
+        return true;
+    }
+    function open1() {
+        var value=document.getElementById("222");
+        value.type="text";
+    }
+    function close1() {
+        var value=document.getElementById("222");
+        value.type="password";
+    }
+
+</script>
+</body>
+</html>
